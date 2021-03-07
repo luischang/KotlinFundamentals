@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import java.io.Console
-import java.time.LocalDateTime
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.i("INF-KT","Print in console")
-        mostrarMensajeToast("Hello World in Kotlin")
+        viewMessageToast("Hello World in Kotlin")
         var result = this.getFinalAmount(amount, exchangeRate);
-        mostrarMensajeToast("Final Amount: $result")
+        viewMessageToast("Final Amount: $result")
         getGeneration(year)
         getGenerationWithWhen(year)
 
@@ -69,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         return amount * exchangeRate
     }
 
-    private fun mostrarMensajeToast(mensaje: String){
+    private fun viewMessageToast(mensaje: String){
         Toast.makeText(this,mensaje, Toast.LENGTH_LONG).show()
     }
 }
